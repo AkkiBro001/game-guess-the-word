@@ -5,16 +5,11 @@ import GuessWords from './GuessWords';
 import KeyboardLayout from './KeyboardLayout';
 import Words from './wordsList.json'
 import { ATTEMPT } from './GuessWordAttempt';
+import question from './assets/question.png'
 
 function App() {
   function getWord() {
-    let word = Words[Math.floor(Math.random() * Words.length)]
-    const isNotReapeatletter =  word.split("").every((letter, _, arr) => arr.indexOf(letter) === arr.lastIndexOf(letter))
-    if(isNotReapeatletter){
-      return word
-    }else{
-      getWord()
-    }
+    return Words[Math.floor(Math.random() * Words.length)]
   }
 
   const [wordToGuess, setWordToGuess] = useState(
@@ -55,13 +50,13 @@ function App() {
 
 
   return <div className="main">
-    <h2>Guess The Word</h2>
+    <h2>Guess The Word <img src={question} className="question"/></h2>
     <p className="result">
-      {isWinner && "Winner!!! Refresh to try again"}
-      {isLose && "Nice Try! Refresh to try again"}
+      {isWinner && "Winner!!! Press 'Enter' to try again"}
+      {isLose && "Nice Try! Press 'Enter' to try again"}
     </p>
     <GuessWordAttempt noOfGuesses={inCorrectWord.length} />
-    <GuessWords guessWords={guessWords} wordToGuess={wordToGuess} />
+    <GuessWords guessWords={guessWords} wordToGuess={wordToGuess} revelLetters = {isLose}/>
     <div style={{ alignSelf: 'stretch' }}>
       <KeyboardLayout
         disabledKeyboard={isWinner || isLose}

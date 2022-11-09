@@ -4,7 +4,7 @@ const KEYS = Array.from(Array(26)).map((e, i) => i + 65).map((x) => String.fromC
 
 
 function KeyboardLayout({activeLetters, inActiveLetters, addGuessLetter, disabledKeyboard}) {
-  console.log(activeLetters)
+  
   return (
     <div className="keybord">
     {KEYS.map((key, index) => {
