@@ -8,7 +8,13 @@ import { ATTEMPT } from './GuessWordAttempt';
 
 function App() {
   function getWord() {
-    return Words[Math.floor(Math.random() * Words.length)]
+    let word = Words[Math.floor(Math.random() * Words.length)]
+    const isNotReapeatletter =  word.split("").every((letter, _, arr) => arr.indexOf(letter) === arr.lastIndexOf(letter))
+    if(isNotReapeatletter){
+      return word
+    }else{
+      getWord()
+    }
   }
 
   const [wordToGuess, setWordToGuess] = useState(
