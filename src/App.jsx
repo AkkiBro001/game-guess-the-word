@@ -23,6 +23,8 @@ function App() {
   const [guessWords, setGuessWords] = useState(() => guessWordInit);
   let inCorrectWord = guessWords.filter(letter => !wordToGuess.includes(letter));
 
+ 
+
   const isLose = inCorrectWord.length >= ATTEMPT;
   const isWinner = wordToGuess.split("").every(letter => guessWords.includes(letter));
 
