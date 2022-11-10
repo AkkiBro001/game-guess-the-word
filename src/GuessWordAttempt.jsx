@@ -7,7 +7,7 @@ function GuessWordAttempt({ noOfGuesses }) {
     <div className="attempt">
       {Array.from(Array(ATTEMPT)).map((_, index) => {
         return <div key={index} className={`cross ${index < noOfGuesses ? 'active shake' : ''}`}>
-          &#9932;
+        X
         </div>
       })}
     </div>
