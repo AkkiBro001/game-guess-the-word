@@ -54,7 +54,7 @@ function App() {
   return <div className="main">
     <h2><span>Guess The Word</span> <img src={question} className="question"/></h2>
     <p className="result">
-      {isWinner && "Winner!!! Press 'Enter' OR 'Refresh' to try again"}
+      {isWinner && "Winner! Press 'Enter' OR 'Refresh' to try again"}
       {isLose && "Nice Try! Press 'Enter' OR 'Refresh' to try again"}
     </p>
     <GuessWordAttempt noOfGuesses={inCorrectWord.length} />
