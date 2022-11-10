@@ -23,10 +23,13 @@ body{
 .main h2{
   font-size: 3rem;
   color: #e21f27;
+  display: flex;
+  align-items: center;
+  gap: 1rem
 }
 
 .main .question{
-  height: 60px;
+  height: 3.75rem;
 }
 
 .main .result{

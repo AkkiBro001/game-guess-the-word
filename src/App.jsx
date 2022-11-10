@@ -52,7 +52,7 @@ function App() {
 
 
   return <div className="main">
-    <h2>Guess The Word <img src={question} className="question"/></h2>
+    <h2><span>Guess The Word</span> <img src={question} className="question"/></h2>
     <p className="result">
       {isWinner && "Winner!!! Press 'Enter' to try again"}
       {isLose && "Nice Try! Press 'Enter' to try again"}
